@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:app_7/49_snackBar.dart';
+import 'package:app_3/55_ListViewSeparator.dart';
 
 void main() {
   runApp(const MyApp());
@@ -63,7 +64,7 @@ class _MyHomePageState extends State<MyHomePage> {
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
       ),
-      body: tSnackBar(),
+      body: tListViewSeparator(),
     );
   }
 }
