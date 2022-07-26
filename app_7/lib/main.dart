@@ -13,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'WAZ P2 ',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -31,30 +31,30 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  GlobalKey<ScaffoldState> _scfldKy = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
-    return DefaultTabController(
-      length: 4,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-          centerTitle: true,
-        ),
-        body: TabBarView(
-          children: [
-            Container(
-              child: Text("page #1"),
-            ),
-            Container(
-              child: Text("page #2"),
-            ),
-            Container(
-              child: Text("page #3"),
-            ),
-            Container(
-              child: Text("page #4"),
-            ),
-          ],
+    return Scaffold(
+      key: _scfldKy,
+      appBar: AppBar(
+        title: Text(" Waz P2"),
+        centerTitle: true,
+        actions: [
+          Icon(Icons.map),
+          Icon(Icons.location_on),
+          Icon(Icons.flag),
+        ],
+      ),
+      drawer: Drawer(
+        child: Text("Hi"),
+      ),
+      body: Center(
+        child: ElevatedButton.icon(
+          onPressed: () {
+            _scfldKy.currentState?.openDrawer();
+          },
+          icon: Icon(Icons.alarm),
+          label: Text("Show bar"),
         ),
       ),
     );
