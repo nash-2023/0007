@@ -59,9 +59,8 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             UserAccountsDrawerHeader(
               currentAccountPicture: CircleAvatar(
-                backgroundImage: NetworkImage(
-                  "https://placekitten.com/g/200/300",
-                ),
+                backgroundColor: Colors.yellow,
+                child: Text("Abdalla"),
               ),
               accountEmail: Text("abdalla.fat7y@hotmail.com"),
               accountName: Text("Al-Ezz"),
@@ -74,15 +73,19 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      body: Center(
-        child: ElevatedButton.icon(
-          onPressed: () {
-            _scfldKy.currentState?.openDrawer();
-          },
-          icon: Icon(Icons.alarm),
-          label: Text("Show bar"),
-        ),
-      ),
+      /******************************body */
+      // body: Center(
+      //   child: ElevatedButton.icon(
+      //     onPressed: () {
+      //       _scfldKy.currentState?.openDrawer();
+      //     },
+      //     icon: Icon(Icons.alarm),
+      //     label: Text("Show bar"),
+      //   ),
+      // ),
+      /********************************* */
+      body: tTapBarView(),
+      /********************************* */
     );
   }
 }
