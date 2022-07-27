@@ -37,16 +37,42 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       key: _scfldKy,
       appBar: AppBar(
-        title: Text(" Waz P2"),
+        title: Text("WAZ P2"),
         centerTitle: true,
         actions: [
-          Icon(Icons.map),
-          Icon(Icons.location_on),
-          Icon(Icons.flag),
+          ElevatedButton(
+            onPressed: () {},
+            child: Icon(Icons.map),
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: Icon(Icons.location_on),
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: Icon(Icons.flag),
+          ),
         ],
       ),
       drawer: Drawer(
-        child: Text("Hi"),
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+              currentAccountPicture: CircleAvatar(
+                backgroundImage: NetworkImage(
+                  "https://placekitten.com/g/200/300",
+                ),
+              ),
+              accountEmail: Text("abdalla.fat7y@hotmail.com"),
+              accountName: Text("Al-Ezz"),
+            ),
+            ListTile(
+              leading: Icon(Icons.verified_user),
+              title: Text("me"),
+              subtitle: Text("you"),
+            )
+          ],
+        ),
       ),
       body: Center(
         child: ElevatedButton.icon(
