@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import "package:app_7/63_tapBar.dart";
+import 'package:app_7/65_initialState.dart';
+import 'package:app_7/65_tabBarWithInitialState.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,6 +33,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   GlobalKey<ScaffoldState> _scfldKy = new GlobalKey<ScaffoldState>();
+  var idx = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,6 +88,22 @@ class _MyHomePageState extends State<MyHomePage> {
       /********************************* */
       body: tTapBarView(),
       /********************************* */
+      //*************************************** 66_buttom navigation bar */
+      bottomNavigationBar: BottomNavigationBar(
+        // backgroundColor: Colors.blue,
+
+        currentIndex: idx,
+        onTap: (i) {
+          setState(() {
+            idx = i;
+          });
+        },
+        items: [
+          BottomNavigationBarItem(label: "Zero", icon: Icon(Icons.ac_unit)),
+          BottomNavigationBarItem(label: "One", icon: Icon(Icons.dangerous)),
+          BottomNavigationBarItem(label: "Two", icon: Icon(Icons.gamepad)),
+        ],
+      ),
     );
   }
 }

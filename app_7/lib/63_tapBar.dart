@@ -19,12 +19,23 @@ class _tTapBarViewState extends State<tTapBarView> {
         appBar: AppBar(
           bottom: TabBar(
             isScrollable: true,
+            padding: EdgeInsets.only(bottom: 10.0),
+            indicatorColor: Colors.black,
+            indicatorWeight: 5.0,
+            indicatorPadding: EdgeInsets.symmetric(horizontal: 10.0),
+            labelColor: Colors.white,
+            labelStyle: TextStyle(),
+            onTap: (i) {
+              print(i);
+            },
             tabs: [
               Tab(
                 child: Text("page 1"),
+                icon: Icon(Icons.location_on),
               ),
               Tab(
                 child: Text("Page 2"),
+                icon: Icon(Icons.location_off),
               ),
             ],
           ),
