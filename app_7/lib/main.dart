@@ -91,7 +91,6 @@ class _MyHomePageState extends State<MyHomePage> {
       //*************************************** 66_buttom navigation bar */
       bottomNavigationBar: BottomNavigationBar(
         // backgroundColor: Colors.blue,
-
         currentIndex: idx,
         onTap: (i) {
           setState(() {
