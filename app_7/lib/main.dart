@@ -7,17 +7,16 @@ void main() {
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
-
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'WAZ P2 ',
+      title: 'WAZ-P2',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MyHomePage(title: 'WAZ-P2'),
     );
   }
 }
@@ -37,7 +36,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       key: _scfldKy,
       appBar: AppBar(
-        title: Text("WAZ P2"),
+        title: Text(widget.title),
         centerTitle: true,
         actions: [
           ElevatedButton(
