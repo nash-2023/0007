@@ -1,25 +1,24 @@
 import 'package:flutter/material.dart';
-import 'main.dart';
 
-class tTapBarViewWithInitiStt extends StatefulWidget {
-  tTapBarViewWithInitiStt({Key? key}) : super(key: key);
+class tTabInit extends StatefulWidget {
+  tTabInit({Key? key}) : super(key: key);
 
   @override
-  State<tTapBarViewWithInitiStt> createState() =>
-      _tTapBarViewWithInitiSttState();
+  State<tTabInit> createState() => _tTabInitState();
 }
 
-class _tTapBarViewWithInitiSttState extends State<tTapBarViewWithInitiStt>
+class _tTabInitState extends State<tTabInit>
     with SingleTickerProviderStateMixin {
   @override
   late TabController myControler;
+  // = new TabController(length: 2, vsync: this, initialIndex: 0);
   void initState() {
     // TODO: implement initState
     super.initState();
     myControler = new TabController(
       length: 2,
       vsync: this,
-      initialIndex: 2,
+      initialIndex: 0,
     );
   }
 

@@ -9,13 +9,11 @@ class tTapBarView extends StatefulWidget {
 }
 
 class _tTapBarViewState extends State<tTapBarView> {
-  GlobalKey<ScaffoldState> _skey = new GlobalKey<ScaffoldState>();
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
       length: 2,
       child: Scaffold(
-        key: _skey,
         appBar: AppBar(
           bottom: TabBar(
             isScrollable: true,

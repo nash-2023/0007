@@ -33,7 +33,12 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   GlobalKey<ScaffoldState> _scfldKy = new GlobalKey<ScaffoldState>();
-  var idx = 0;
+  var selected_idx = 0;
+  List<Widget> widgetPages = [
+    Text("page # Zero"),
+    Text("page # One"),
+    Text("page # Two"),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,7 +80,7 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      /******************************body */
+      /****************************** body */
       // body: Center(
       //   child: ElevatedButton.icon(
       //     onPressed: () {
@@ -86,15 +91,27 @@ class _MyHomePageState extends State<MyHomePage> {
       //   ),
       // ),
       /********************************* */
-      body: tTapBarView(),
+      // body: widgetPages[selected_idx],
+      body: widgetPages.elementAt(selected_idx),
       /********************************* */
       //*************************************** 66_buttom navigation bar */
       bottomNavigationBar: BottomNavigationBar(
         // backgroundColor: Colors.blue,
-        currentIndex: idx,
+        currentIndex: selected_idx,
+        selectedItemColor: Colors.red,
+        selectedFontSize: 20.0,
+        selectedLabelStyle: TextStyle(
+          decoration: TextDecoration.underline,
+        ),
+        unselectedItemColor: Colors.black,
+        unselectedFontSize: 10.0,
+        unselectedLabelStyle: TextStyle(
+          decoration: TextDecoration.lineThrough,
+        ),
+
         onTap: (i) {
           setState(() {
-            idx = i;
+            selected_idx = i;
           });
         },
         items: [
